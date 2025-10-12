@@ -3,7 +3,7 @@
 # Contributor: Tom Gundersen <teg@jklm.no>
 
 pkgname=filesystem
-pkgver=2025.05.03
+pkgver=2025.10.12
 pkgrel=1
 pkgdesc='Base Arch Linux files'
 arch=('any')

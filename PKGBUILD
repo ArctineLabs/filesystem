@@ -7,7 +7,7 @@ pkgver=2025.05.03
 pkgrel=1
 pkgdesc='Base Arch Linux files'
 arch=('any')
-license=('GPL-3.0-or-later')
+license=('0BSD')
 url='https://archlinux.org'
 depends=('iana-etc')
 backup=(
@@ -30,6 +30,7 @@ backup=(
   'etc/subuid'
 )
 source=(
+  'LICENSE'
   'arch-release'
   'archlinux-logo.png'
   'archlinux-logo.svg'
@@ -59,7 +60,8 @@ source=(
   'subgid'
   'subuid'
 )
-sha256sums=('01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b'
+sha256sums=('7056c04df17a4e0f0bac9f787f347c9cd892cee6323d1c89528090afd0b934a3'
+            '01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b'
             '3f48779141b68a81e07fee710a42025d4f67b16240295aa4cf148a7ba99cab3c'
             '3ffe8ea4e98db43a3ec4dcca55fd4009cd8b8d220f0996aef7a5b427fdf65234'
             '601069e6e8920309178c397fd8cebe43410827d01899d31777d13212f0dfacf8'
@@ -242,6 +244,8 @@ package() {
 
     install -vDm "$mode" -o "$user" -g "$group" "$srcdir/$source_file" "$target_file"
   done
+
+  install -vDm 644 "$srcdir/LICENSE" -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 # vim:set ts=2 sw=2 et:
